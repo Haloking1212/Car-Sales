@@ -9,10 +9,10 @@ export const selectedFeature = feature => {
     }
 }
 
-export const removedFeature = id => {
+export const removedFeature = feature => {
     
     return {
         type: REMOVE_FEATURE,
-        payload: id
+        payload: feature
     }
 }

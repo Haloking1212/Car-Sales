@@ -5,9 +5,9 @@ import { removedFeature } from "../store/actions/index";
 
 const AddedFeatures = props => {
 
-  const removeFeature = id => {
+  const removeFeature = feature => {
     // dispatch an action here to remove an item
-    props.removedFeature(id);
+    props.removedFeature(feature);
   };
 
   return (
