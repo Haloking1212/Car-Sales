@@ -1,3 +1,8 @@
+import {
+  ADD_FEATURE,
+  REMOVE_FEATURE
+} from "../actions/index";
+
 
 export const initialState = {
     additionalPrice: 0,
@@ -18,6 +23,25 @@ export const initialState = {
 
 export function reducer(state = initialState, action) {
     switch(action.type) {
+      case ADD_FEATURE:
+        if(state.car.features.includes(action.payload)){
+          return state
+        }
+        return {
+           ...state,
+            car: {
+              ...state.car,
+              features: [...state.car.features,action.payload]
+            }
+        }
+        case REMOVE_FEATURE: 
+          return {
+           ...state,
+           car: {
+             ...state.car,
+             features: [...state.car.features.filter(item => item.id !== action.payload)]
+           }
+          }
         default:
            return state
     }
